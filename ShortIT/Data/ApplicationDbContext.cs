@@ -13,5 +13,7 @@ namespace ShortIT.Data
         {
 
         }
+
+        public DbSet<ShortUrl> ShortUrls { get; set; }
     }
 }
