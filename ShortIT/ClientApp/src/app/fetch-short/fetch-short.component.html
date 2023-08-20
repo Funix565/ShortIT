@@ -1,0 +1,27 @@
+<h1 id="tableLabel">Link List</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<form #shortForm="ngForm" (ngSubmit)="postUrl()">
+  <input type="text" [(ngModel)]="formData.originalUrl" name="originalUrl" placeholder="Paste long URL"/>
+  <button>Shorten</button>
+</form>
+
+<p *ngIf="!shorturls?.length"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="shorturls.length">
+  <thead>
+    <tr>
+      <th>Short Link</th>
+      <th>Original URL</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let shorturl of shorturls">
+      <td><a href="{{ shorturl.shortLink }}">{{ shorturl.shortLink }}</a></td>
+      <td><a href="{{ shorturl.originalUrl }}">{{ shorturl.originalUrl }}</a></td>
+      <td><a href="https://localhost:44403/fetch-short/{{shorturl.id}}">Details</a></td>
+    </tr>
+  </tbody>
+</table>

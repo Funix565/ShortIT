@@ -7,6 +7,9 @@ const PROXY_CONFIG = [
   {
     context: [
       "/weatherforecast",
+      /*TODO: Just a guess. Works GetById. GetByShortUrl -- no*/
+      "/api/shorturl",
+
       "/_configuration",
       "/.well-known",
       "/Identity",
