@@ -51,7 +51,7 @@ namespace ShortIT.Controllers
                 return NotFound();
             }
 
-            return Ok(originalUrl);
+            return Redirect(originalUrl.OriginalUrl);
         }
 
         [HttpDelete("{shortUrlId}")]
